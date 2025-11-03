@@ -15,3 +15,16 @@ export interface KpiCardData {
   changeType: "positive" | "negative";
   icon: React.ElementType; // We'll pass Lucide icons
 }
+
+// For our Inventory Data Table
+export type PalletStatus = "In Warehouse" | "Loading" | "Damaged" | "Shipped";
+
+export interface Pallet {
+  id: string; // e.g., "PLT-001"
+  contents: string; // e.g., "Electronics"
+  origin: string; // e.g., "Supplier A"
+  destination: string; // e.g., "Dock 4"
+  status: PalletStatus;
+  weight: number; // in lbs
+  created: string; // ISO date string
+}
