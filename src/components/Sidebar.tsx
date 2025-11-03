@@ -10,6 +10,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/theme-toggle"; // <-- Import is included
 
 const navItems = [
   { to: "/", icon: LayoutDashboard, label: "Dashboard" },
@@ -82,25 +83,32 @@ export function Sidebar() {
         })}
       </nav>
 
-      {/* User Area */}
+      {/* User Area (FIXED LAYOUT) */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
         className="p-4 border-t border-border"
       >
-        <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-accent/50 transition-colors cursor-pointer">
-          <Avatar className="h-10 w-10">
-            <AvatarFallback className="bg-primary text-primary-foreground font-semibold">
-              JD
-            </AvatarFallback>
-          </Avatar>
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium truncate">John Doe</p>
-            <p className="text-xs text-muted-foreground truncate">
-              john.doe@palletos.com
-            </p>
+        <div className="flex items-center gap-3">
+          {/* This wrapper keeps the user info flexible */}
+          <div className="flex flex-1 items-center gap-3 p-3 rounded-lg hover:bg-accent/50 transition-colors cursor-pointer min-w-0">
+            <Avatar className="h-10 w-10">
+              <AvatarFallback className="bg-primary text-primary-foreground font-semibold">
+                JD
+              </AvatarFallback>
+            </Avatar>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium truncate">John Doe</p>
+              <p className="text-xs text-muted-foreground truncate">
+                john.doe@palletos.com
+              </p>
+            </div>
           </div>
+
+          {/* The toggle is now a sibling, not breaking the flexbox */}
+          <ThemeToggle />
+
         </div>
       </motion.div>
     </motion.aside>
