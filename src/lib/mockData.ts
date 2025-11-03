@@ -1,4 +1,4 @@
-import { KpiCardData, Shipment, Pallet } from "./types";
+import { KpiCardData, Shipment, Pallet, Customer } from "./types";
 import { Truck, Warehouse, AlertTriangle, CheckCircle2 } from "lucide-react";
 
 export const kpiData: KpiCardData[] = [
@@ -81,4 +81,14 @@ export const palletData: Pallet[] = [
   { id: "PLT-008", contents: "Groceries", origin: "Supplier C", destination: "Cold-Stow-2", status: "In Warehouse", weight: 1600, created: "2025-11-01T10:15:00Z" },
   { id: "PLT-009", contents: "Auto Parts", origin: "Supplier A", destination: "Rack 1C", status: "Loading", weight: 2100, created: "2025-11-01T09:00:00Z" },
   { id: "PLT-010", contents: "Electronics", origin: "Supplier A", destination: "Rack 1A", status: "In Warehouse", weight: 1250, created: "2025-10-31T15:00:00Z" },
+];
+
+export const customerData: Customer[] = [
+  { id: "CUST-001", companyName: "Apex Logistics", contactName: "Sarah Chen", email: "sarah.chen@apex.com", phone: "(555) 001-1234", tier: "VIP", joinedDate: "2023-01-15T00:00:00Z" },
+  { id: "CUST-002", companyName: "Global Imports", contactName: "David Lee", email: "david.lee@global.com", phone: "(555) 002-2345", tier: "Premium", joinedDate: "2023-03-22T00:00:00Z" },
+  { id: "CUST-003", companyName: "Rapid Transport", contactName: "Maria Garcia", email: "maria.g@rapid.com", phone: "(555) 003-3456", tier: "Standard", joinedDate: "2023-05-10T00:00:00Z" },
+  { id: "CUST-004", companyName: "Midwest Foods", contactName: "James Smith", email: "jsmith@midwest.com", phone: "(555) 004-4567", tier: "Premium", joinedDate: "2023-02-05T00:00:00Z" },
+  { id: "CUST-005", companyName: "Coastline Inc.", contactName: "Emily White", email: "emily.w@coastline.com", phone: "(555) 005-5678", tier: "Standard", joinedDate: "2023-07-19T00:00:00Z" },
+  { id: "CUST-006", companyName: "TechPro Solutions", contactName: "Michael Brown", email: "mbrown@techpro.com", phone: "(555) 006-6789", tier: "VIP", joinedDate: "2023-04-30T00:00:00Z" },
+  { id: "CUST-007", companyName: "PharmaSupply", contactName: "Linda Johnson", email: "linda.j@pharma.com", phone: "(555) 007-7890", tier: "Premium", joinedDate: "2023-06-01T00:00:00Z" },
 ];
