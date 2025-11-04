@@ -28,3 +28,16 @@ export interface Pallet {
   weight: number; // in lbs
   created: string; // ISO date string
 }
+
+// For our Customers Data Table
+export type CustomerTier = "Standard" | "Premium" | "VIP";
+
+export interface Customer {
+  id: string; // e.g., "CUST-001"
+  companyName: string; // e.g., "Apex Logistics"
+  contactName: string; // e.g., "Sarah Chen"
+  email: string;
+  phone: string;
+  tier: CustomerTier;
+  joinedDate: string; // ISO date string
+}
